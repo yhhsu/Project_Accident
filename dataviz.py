@@ -6,6 +6,8 @@ import seaborn as sns
 import streamlit_option_menu
 from streamlit_option_menu import option_menu
 
+df = pd.read_csv("data_preprocessed.csv")
+
 def app():
     st.title("Data Visualization")
     # Display the first 10 rows of the dataframe
