@@ -1,6 +1,6 @@
 streamlit
 pandas
 numpy
-matplotlib.pyplot
+matplotlib
 seaborn
 streamlit_option_menu
