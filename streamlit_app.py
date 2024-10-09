@@ -15,7 +15,8 @@ import modelisation
 import interpretation
 import conclusion
 
-df = pd.read_csv("data_preprocessed.csv")
+url = "https://github.com/yhhsu/Project_Accident/releases/tag/data"
+df = pd.read_csv(url)
 
 with st.sidebar:
   selected = option_menu(
