@@ -15,7 +15,7 @@ import modelisation
 import interpretation
 import conclusion
 
-df = pd.read_csv("data_preprocessed.csv")
+df = pd.read_csv("data_preprocessed.csv", error_bad_lines=False))
 
 with st.sidebar:
   selected = option_menu(
