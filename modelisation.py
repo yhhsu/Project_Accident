@@ -5,6 +5,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit_option_menu
 from streamlit_option_menu import option_menu
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
+from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix
 
 df = pd.read_csv("data_preprocessed.csv")
 
@@ -31,14 +37,7 @@ def app():
     X = df[['place', 'catu', 'sexe', 'trajet', 'locp', 'actp', 'etatp', 'senc', 'occutc', 'obs', 'obsm', 'catr', 'circ', 'plan', 'larrout', 'surf', 'situ', 'hrmn', 'lum', 'agg', 'int', 'atm', 'com', 'dep', 'age']]
     y = df['grav']
 
-    from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
-
-    from sklearn.ensemble import RandomForestClassifier
-    from xgboost import XGBClassifier
-    from sklearn.svm import SVC
-    from sklearn.linear_model import LogisticRegression
-    from sklearn.metrics import confusion_matrix
     
     def prediction(classifier):
         if classifier == 'Random Forest':
