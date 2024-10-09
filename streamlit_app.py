@@ -15,7 +15,7 @@ import modelisation
 import interpretation
 import conclusion
 
-url = "https://github.com/yhhsu/Project_Accident/releases/tag/data"
+url = "https://github.com/yhhsu/Project_Accident/releases/latest"
 df = pd.read_csv(url)
 
 with st.sidebar:
