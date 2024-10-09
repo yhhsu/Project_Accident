@@ -16,7 +16,7 @@ import interpretation
 import conclusion
 
 url = "https://github.com/yhhsu/Project_Accident/releases/download/data/data_preprocessed.csv"
-df = pd.read_csv(url, sep=',')
+df = pd.read_csv(url, sep=',', error_bad_lines=False, warn_bad_lines=True)
 
 with st.sidebar:
   selected = option_menu(
