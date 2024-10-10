@@ -16,13 +16,13 @@ def app():
     ''')
     st.write("Par la suite, avec les amélioration apportées,")
     st.write("### XGBoost")
-    st.image("xgboost.jpg")
+    st.image("xgboost.png")
     st.write("### LightGBM")
-    st.image("lightgbm.jpg")
+    st.image("lightgbm.png")
     st.write("### SVM")
-    st.image("svm.jpg")
+    st.image("svm.png")
     st.write("### Random Forest")
-    st.image("random_forest.jpg")
+    st.image("random_forest.png")
     st.write('''
     Nous convenons donc ensemble que le modèle le plus optimisé dans notre 
     problématique  de  prédiction  de  la  gravité  des  accidents  est  le  Random  Forest  car 
