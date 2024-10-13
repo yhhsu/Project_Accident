@@ -132,14 +132,8 @@ def app():
     En conclusion de cette partie Feature Selection, nous décidons de sélectionner 3 sets de features :
     
     - **Les 60 features du SelectKBest.**
-    
-    ---
-    
-    - **Le seuil (0.01) du SelectFromModel du Random Forest.**
-    
-    ---
-    
-    - **Le seuil (0.00925) du SelectFromModel du Random Forest.**
+    - **Les 16 features sélectionnés du seuil (0.01) du SelectFromModel du Random Forest.**
+    - **Les 13 features sélectionnés du seuil (0.00925) du SelectFromModel du Random Forest.**
     ''')
     
     st.code('''
@@ -168,5 +162,12 @@ def app():
     df2 = df2.set_index('Modèle')
 
     st.write("## 3. Comparaison des différentes phases d'optimisation du Random Forest")
-    st.write("Dans cette partie, nous avons testé de nombreux modèles différents (xgboost, lightgbm, random forest). Cependant nous avons décidé de ne présenter que le Random Forest qui est le modèle le plus performant pour notre problèmatique. A l'aide d'optimisation, voici l'évolution des performances que nous avons réussi à atteindre:")
+    
+    st.markdown('''
+    Au cours de notre projet, nous avons testé de plusieurs modèles (Xgboost, LightGBM, Random Forest, SVM) et avons essayé d'apporter différents types d'optimisation (GridSearch, SMOTE):
+    - **XGBoost - Optimization des paramètres du modèle + Réechantillonage avec SMOTE**
+    - **LightGBM - Optimization des paramètres du modèle + Réechantillonage avec SMOTE**
+    - **Random Forest - Réechantillonage avec SMOTE**
+    ''')
+    st.write("Cependant nous avons décidé de ne présenter que le Random Forest qui est le modèle le plus performant pour notre problèmatique. A l'aide d'optimisation, voici l'évolution des performances que nous avons réussi à atteindre:")
     st.dataframe(df2)
