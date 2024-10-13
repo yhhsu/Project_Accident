@@ -9,7 +9,7 @@ from streamlit_option_menu import option_menu
 # Import Pages
 import vue_ensemble
 import jeu_donnee
-import dataviz
+#import dataviz
 import preparation
 import modelisation
 import interpretation
