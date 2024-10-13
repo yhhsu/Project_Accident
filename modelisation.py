@@ -1,4 +1,4 @@
-import streamlit as st 
+import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -84,7 +84,7 @@ def app():
     st.write("## 1. Comparaison de différents type de modèles bruts")
     st.dataframe(df1)
 
-    # Partie 2    
+    # Partie 2
     st.write("## 2. Feature Selection")
     st.write('''
     Afin d'optimiser l'entrainement de notre modèle, nous devons choisir judicieusement les features à considérer.
@@ -102,9 +102,14 @@ def app():
       Une sélection des features en utilisant des modèles avancés déjà implémentés sur Python (SelectKBest / SelectFromModel).
     ''')
     
-    st.image("img/skb_vs_sfm.png", caption="Comparaison sfm vs skb", use_column_width=True)
+    st.image("img/skb_vs_sfm.png", caption="Comparaison SelectKBest vs SelectFromModel", use_column_width=True)
 
     st.write("### 2.A. Méthode Corrélation")
+        st.code('''
+    # Code pour la matrice de corrélation des features:
+    corr_matrix = df.corr()
+    ''', language='python')
+    st.image("img/corr_matrix.png", caption="Features Correlation Matrix ", use_column_width=True)
     st.write("On remarque que nous avons un grand nombre de variables. Mais nous n'observons pas particulièrement de corrélations fortes (-1 ou 1). Les seules fortes corrélations que nous observons se font entre les variables qui recensent les piétons. Nous décidons de ne pas prendre de décision à ce stade.")
 
     st.write("### 2.B. Méthode SelectKbest")
@@ -114,9 +119,12 @@ def app():
 
     st.write("### 2.C. Méthode 2 : SelectFromModel")
     st.write("Nous avons appliqué une features selection avec un SelectFromModel. Pour cette librairie, le modèle selectionné à une importance sur la sélection de features. On le teste donc avec nos 3 modèles brutes. L'idée est de donner une grille de seuil à tester, et sélectionner le set de features qui parvient à obternir les meilleures performances")
-    st.image("img/lightgbm_sfm.png", caption="Features Selection sfm Lightgbm", use_column_width=True)
-    st.image("img/xgboost_sfm.png", caption="Features Selection sfm Lightgbm", use_column_width=True)
-    st.image("img/rf_sfm.png", caption="Features Selection sfm Lightgbm", use_column_width=True)
+    st.write("#### 2.C.1. LightGBM")
+    st.image("img/lightgbm_sfm.png", caption="LightGBM - Features Selection SelectFrom Model", use_column_width=True)
+    st.write("#### 2.C.2. Xgboost")
+    st.image("img/xgboost_sfm.png", caption="XgBoost - Features Selection SelectFrom Model", use_column_width=True)
+    st.write("#### 2.C.3. Random Forest")
+    st.image("img/rf_sfm.png", caption="Random Forest - Features Selection SelectFrom Model", use_column_width=True)
     st.write("On remarque que pour le xgboost et le lightgbm, l'accuracy décroit lorsque le seuil augmente. Nous n'avons donc pas été capable de trouver un set de features convenable. Cependant, pour le Random Forest, nous avons trouvé un seuil qui sélectionne un set de variable qui ont de bonnes performances.")
     st.markdown('''
     ### **Conclusion de la Feature Selection**
