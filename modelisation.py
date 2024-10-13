@@ -89,13 +89,20 @@ def app():
     st.write('''
     Afin d'optimiser l'entrainement de notre modèle, nous devons choisir judicieusement les features à considérer.
     ''')
-    st.write('''Il existe différentes méthode pour selectionner les meilleures features de notre modèle:
-    - Une sélection à la main des features qui nous semblent les plus importantes (par exemple à partir de notre exercice de datavizualisation). Cependant au vu de notre niveau d'expertise sur le sujet des accidents, ainsi qu'au vu du nombre de variables et des interactions, cela ne nous semblait pas pertinent. 
-    - Une sélection ou réduction des features via une matrice de corrélation en regardant les corrélation entre les variables.
-    - Une sélection des features en utilisant des modèles avancés déjà implémentés sur Python (SelectKBest / SelectFromModel)
+    st.write('''
+    Il existe différentes méthodes pour sélectionner les meilleures features de notre modèle :
+    
+    - **Sélection manuelle des features :**
+      Une sélection à la main des features qui nous semblent les plus importantes (par exemple à partir de notre exercice de datavizualisation). Cependant, au vu de notre niveau d'expertise sur le sujet des accidents, ainsi qu'au vu du nombre de variables et des interactions, cela ne nous semblait pas pertinent.
+    
+    - **Réduction via une matrice de corrélation :**
+      Une sélection ou réduction des features via une matrice de corrélation en regardant les corrélations entre les variables.
+    
+    - **Utilisation de modèles avancés :**
+      Une sélection des features en utilisant des modèles avancés déjà implémentés sur Python (SelectKBest / SelectFromModel).
     ''')
     
-    st.image("img/skb_vs_sfm.png.png", caption="Comparaison sfm vs skb", use_column_width=True)
+    st.image("img/skb_vs_sfm.png", caption="Comparaison sfm vs skb", use_column_width=True)
 
     st.write("### 2.A. Méthode Corrélation")
     st.write("On remarque que nous avons un grand nombre de variables. Mais nous n'observons pas particulièrement de corrélations fortes (-1 ou 1). Les seules fortes corrélations que nous observons se font entre les variables qui recensent les piétons. Nous décidons de ne pas prendre de décision à ce stade.")
@@ -111,11 +118,21 @@ def app():
     st.image("img/xgboost_sfm.png", caption="Features Selection sfm Lightgbm", use_column_width=True)
     st.image("img/rf_sfm.png", caption="Features Selection sfm Lightgbm", use_column_width=True)
     st.write("On remarque que pour le xgboost et le lightgbm, l'accuracy décroit lorsque le seuil augmente. Nous n'avons donc pas été capable de trouver un set de features convenable. Cependant, pour le Random Forest, nous avons trouvé un seuil qui sélectionne un set de variable qui ont de bonnes performances.")
-    st.write('''En conclusion de cette partie Feature Selection, nous décidons de sélectionner 3 set de features:
-             - Les 60 features du SelectKBest.
-             - Le seuil (0.01) du SelectFromModel du Random Forest.
-             - Le seuil (0.00925) du SelectFromModel du Random Forest.
-             ''')
+    st.markdown('''
+    ### **Conclusion de la Feature Selection**
+    
+    En conclusion de cette partie Feature Selection, nous décidons de sélectionner 3 sets de features :
+    
+    - **Les 60 features du SelectKBest.**
+    
+    ---
+    
+    - **Le seuil (0.01) du SelectFromModel du Random Forest.**
+    
+    ---
+    
+    - **Le seuil (0.00925) du SelectFromModel du Random Forest.**
+    ''')
     
     st.code('''
     # Assignation des ensembles de features sélectionnées
