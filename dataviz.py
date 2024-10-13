@@ -8,6 +8,21 @@ from streamlit_option_menu import option_menu
 
 df = pd.read_csv("data_preprocessed.csv")
 
+def app():
+    st.title("Data Visualization")
+    # Display the first 10 rows of the dataframe
+    st.write("Displaying first 10 rows of the dataset:")
+    st.dataframe(df.head(10))
+    st.write(f"Dataframe shape: {df.shape}")
+        
+    # Show statistical summary of the dataframe
+    st.write("Summary statistics:")
+    st.dataframe(df.describe())
+    # Option to display NA values
+    if st.checkbox("Afficher les NA"):
+        st.write("Missing values in each column:")
+        st.dataframe(df.isna().sum())
+
     # Chart 1
     df_accidents_par_annee = df.groupby('annee').size().reset_index(name='nombre_accidents')
     # Create the figure and line plot
