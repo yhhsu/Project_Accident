@@ -59,8 +59,8 @@ def app():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
     
     # Features selection issues de la méthode SelectFromModel avec random forest
-    X_train_sfm_1 = X_train[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_1.0', 'trajet_4.0', 'trajet_5.0', 'choc_1.0', 'manv_1.0', 'catr_3.0', 'agg_2']]
-    X_test_sfm_1 = X_test[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_1.0', 'trajet_4.0', 'trajet_5.0', 'choc_1.0', 'manv_1.0', 'catr_3.0', 'agg_2']]
+    #X_train_sfm_1 = X_train[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_1.0', 'trajet_4.0', 'trajet_5.0', 'choc_1.0', 'manv_1.0', 'catr_3.0', 'agg_2']]
+    #X_test_sfm_1 = X_test[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_1.0', 'trajet_4.0', 'trajet_5.0', 'choc_1.0', 'manv_1.0', 'catr_3.0', 'agg_2']]
 
     X_train_sfm_2 = X_train[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_4.0', 'trajet_5.0', 'catr_3.0', 'agg_2']]
     X_test_sfm_2 = X_test[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_4.0', 'trajet_5.0', 'catr_3.0', 'agg_2']]
