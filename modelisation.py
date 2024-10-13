@@ -105,7 +105,7 @@ def app():
     st.image("img/skb_vs_sfm.png", caption="Comparaison SelectKBest vs SelectFromModel", use_column_width=True)
 
     st.write("### 2.A. Méthode Corrélation")
-        st.code('''
+    st.code('''
     # Code pour la matrice de corrélation des features:
     corr_matrix = df.corr()
     ''', language='python')
