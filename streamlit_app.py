@@ -9,7 +9,7 @@ from streamlit_option_menu import option_menu
 # Import Pages
 import vue_ensemble
 import jeu_donnee
-#import dataviz
+import dataviz
 import preparation
 import modelisation
 import interpretation
@@ -44,8 +44,8 @@ if selected == "Jeu de Données":
   jeu_donnee.app()
 
 ### Page 3 - Data Visualization ###
-#if selected == "Data Visualization" : 
-  #dataviz.app()
+if selected == "Data Visualization" : 
+  dataviz.app()
 
 ### Page 4 - Préparation des Données ###
 if selected == "Préparation des Données" : 
