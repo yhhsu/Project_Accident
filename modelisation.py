@@ -55,7 +55,7 @@ def app():
 
     # On sépare nos données en set d'entrainement, et de test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
-    st.write("Les colonnes du DataFrame sont :", X_train.columns.tolist())
+
     # Features selection issues de la méthode SelectFromModel avec random forest
     # X_train_sfm_1 = X_train[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_1.0', 'trajet_4.0', 'trajet_5.0', 'choc_1.0', 'manv_1.0', 'catr_3.0', 'agg_2']]
     # X_test_sfm_1 = X_test[['lartpc', 'larrout', 'mois', 'jour', 'hrmn', 'age', 'place_1.0', 'sexe_2', 'trajet_0.0', 'trajet_1.0', 'trajet_4.0', 'trajet_5.0', 'choc_1.0', 'manv_1.0', 'catr_3.0', 'agg_2']]
@@ -70,6 +70,25 @@ def app():
     #model_rf_sfm_2_best = joblib.load('models/model_rf_sfm_2_best.joblib')
     
     # Partie présentation des résultats pour différents types de modèles
+
+
+    st.write('''
+    ## Pré-requis: Encodage des variables catégorielle. (Méthode: One Hot Encoding)
+    
+    Avant de commencer la modélisation, il est essentiel de vérifier le type des variables présentes dans le dataset. Les variables catégorielles doivent être encodées de manière appropriée pour être interprétées par les algorithmes de machine learning.
+    Nous avons utilisé le "One Hot Encoding" qui est est une méthode couramment utilisée pour transformer les variables catégorielles en un format numérique. Cette technique crée une nouvelle colonne pour chaque catégorie distincte d'une variable et attribue un `1` ou un `0` en fonction de la présence de cette catégorie dans chaque observation. Cela permet d'éviter d'introduire un ordre arbitraire entre les catégories, ce qui pourrait biaiser le modèle.
+    ''')
+    st.code('''
+    # Fonction pour encoder les variables catégorielles
+    def convert_category_to_dummies(X):
+        cat_columns = X.select_dtypes(include = ["object"]).columns
+        X_dummies = pd.get_dummies(X[cat_columns], drop_first = True, prefix = cat_columns)
+        X_final = pd.concat([X.drop(columns = cat_columns), X_dummies], axis = 1)
+        return X_final
+    df = convert_category_to_dummies(df)
+    ''', language='python')
+
+    
     # Partie 1
     data1 = {
     'Modèle': ['Xgboost brut', 'Random forest brut', 'Lightgbm brut'],
