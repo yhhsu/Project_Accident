@@ -19,7 +19,6 @@ def app():
     st.title("Modélisation")
 
     df = pd.read_csv("data_preprocessed.csv")
-    df = df_all
     df = df[df["annee"] == 2015].reset_index(drop=True)
 
     df.replace('nan', -1, inplace=True)
