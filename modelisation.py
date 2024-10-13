@@ -38,6 +38,8 @@ def app():
         4: 3 # Léger
     }
 
+    st.write("Les colonnes du DataFrame sont :", df.columns.tolist())
+    
     # Application du mapping
     df['grav'] = df['grav'].map(labels)
 
