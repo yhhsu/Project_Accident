@@ -18,12 +18,12 @@ def app():
         st.write("### 2.A. LIME")
 
         # Partie 2.B
-        st.write("### 2.B. Interprétation prédiction de la classe 'Etat indemne'")
+        st.write("### 2.B. Interprétation prédiction de la classe Etat indemne")
 
         # Partie 2.C
-        st.write("### 2.C. Interprétation prédiction de la classe 'Etat blessures légères'")
+        st.write("### 2.C. Interprétation prédiction de la classe Etat blessures légères")
 
         # Partie 2.D
-        st.write("### 2.D. Interprétation prédiction de la classe 'Etat grave'")
+        st.write("### 2.D. Interprétation prédiction de la classe Etat grave")
 
     
