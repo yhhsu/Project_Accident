@@ -79,3 +79,9 @@ def app():
     fig = plt.figure()
     sns.countplot(x = 'grav', data = df)
     st.pyplot(fig)
+
+    st.write('''
+    Cette partie de data visualisation nous a permis de comprendre les données et analyser les tendances et les relation entre celles-ci.
+    ''')
+
+     # Chart 1
