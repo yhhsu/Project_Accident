@@ -19,22 +19,22 @@ def app():
     # ''', language='python')
     st.image("img/feature_importance.png", caption="Features les plus importantes de notre modèle RF Optimisé", use_column_width=True)
 
-    # Partie 2
-    st.write("## 2. Interprétation d'une prédiction")
+    # # Partie 2
+    # st.write("## 2. Interprétation d'une prédiction")
 
-    # Partie 2.A
-    st.write("### 2.A. LIME")
+    # # Partie 2.A
+    # st.write("### 2.A. LIME")
 
-    # Partie 2.B
-    st.write("### 2.B. Interprétation prédiction de la classe Etat indemne")
-    st.image("img/interpretation_prediction_indemne.png", caption="Interpretation d'une prédiction de classe 'Indemne' - LIME", use_column_width=True)
+    # # Partie 2.B
+    # st.write("### 2.B. Interprétation prédiction de la classe Etat indemne")
+    # st.image("img/interpretation_prediction_indemne.png", caption="Interpretation d'une prédiction de classe 'Indemne' - LIME", use_column_width=True)
 
-    # Partie 2.C
-    st.write("### 2.C. Interprétation prédiction de la classe Etat blessures légères")
-    st.image("img/interpretation_prediction_leger.png", caption="Interpretation d'une prédiction de classe 'Léger' - LIME", use_column_width=True)
+    # # Partie 2.C
+    # st.write("### 2.C. Interprétation prédiction de la classe Etat blessures légères")
+    # st.image("img/interpretation_prediction_leger.png", caption="Interpretation d'une prédiction de classe 'Léger' - LIME", use_column_width=True)
 
-    # Partie 2.D
-    st.write("### 2.D. Interprétation prédiction de la classe Etat grave")
-    st.image("img/interpretation_prediction_grave.png", caption="Interpretation d'une prédiction de classe 'Grave' - LIME", use_column_width=True)
+    # # Partie 2.D
+    # st.write("### 2.D. Interprétation prédiction de la classe Etat grave")
+    # st.image("img/interpretation_prediction_grave.png", caption="Interpretation d'une prédiction de classe 'Grave' - LIME", use_column_width=True)
 
     
