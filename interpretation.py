@@ -10,7 +10,7 @@ def app():
     st.title("Interprétation")
     st.write("Dans un exercice de modélisation pour une problématique, le choix et les performances sont très importantes mais un aspect clé pour la partie métier est de comprendre comment les décisions de notre modèle ont été prises.")
     st.write("Nous allons dans cette partie identifier les Features les plus importantes de notre modèle et ensuite interpréter une prédiction pour chaque classe prédite".)
-    # Partie 1
+    # Partie 1 
     st.write("## 1. Feature Importance")
     st.code('''
     # Code pour extraire les features les plus importantes de notre modèle:
