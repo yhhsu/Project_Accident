@@ -190,3 +190,26 @@ def app():
     ''')
     st.write("Cependant nous avons décidé de ne présenter que le Random Forest qui est le modèle le plus performant pour notre problèmatique. A l'aide d'optimisation, voici l'évolution des performances que nous avons réussi à atteindre:")
     st.dataframe(df2)
+
+    st.write("Sur notre ensemble de test, nous terminons avec cette matrice de confusion reflétant notre Accuracy")
+    
+    st.header("Matrices de Confusion de l'accuracy")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        if st.button("Afficher Matrice en Nombre"):
+            st.image(
+                "img/matrice_confusion_nombre.png",
+                caption="Matrice de confusion de l'accuracy (en nombre de cas)",
+                use_column_width=True
+            )
+    
+    with col2:
+        if st.button("Afficher Matrice en Pourcentage"):
+            st.image(
+                "img/matrice_confusion_pourcentages.png",
+                caption="Matrice de confusion de l'accuracy (en %)",
+                use_column_width=True
+            )
+    
