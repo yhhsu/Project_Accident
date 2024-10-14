@@ -76,7 +76,7 @@ def app():
     ## Pré-requis: Encodage des variables catégorielle. (Méthode: One Hot Encoding)
     
     Avant de commencer la modélisation, il est essentiel de vérifier le type des variables présentes dans le dataset. Les variables catégorielles doivent être encodées de manière appropriée pour être interprétées par les algorithmes de machine learning.
-    Nous avons utilisé le "One Hot Encoding" qui est est une méthode couramment utilisée pour transformer les variables catégorielles en un format numérique. Cette technique crée une nouvelle colonne pour chaque catégorie distincte d'une variable et attribue un `1` ou un `0` en fonction de la présence de cette catégorie dans chaque observation. Cela permet d'éviter d'introduire un ordre arbitraire entre les catégories, ce qui pourrait biaiser le modèle.
+    Nous avons utilisé le "One Hot Encoding" qui est est une méthode couramment utilisée pour transformer les variables catégorielles en un format numérique.
     ''')
     st.code('''
     # Fonction pour encoder les variables catégorielles
@@ -100,7 +100,7 @@ def app():
     df1 = pd.DataFrame(data1)
     df1 = df1.set_index('Modèle')
 
-    st.write("## 1. Comparaison de différents type de modèles bruts")
+    st.write("## 1. Benchmark - Comparaison de différents type de modèles bruts")
     st.dataframe(df1)
 
     # Partie 2
@@ -129,7 +129,7 @@ def app():
     corr_matrix = df.corr()
     ''', language='python')
     st.image("img/corr_matrix.png", caption="Features Correlation Matrix ", use_column_width=True)
-    st.write("On remarque que nous avons un grand nombre de variables. Mais nous n'observons pas particulièrement de corrélations fortes (-1 ou 1). Les seules fortes corrélations que nous observons se font entre les variables qui recensent les piétons. Nous décidons de ne pas prendre de décision à ce stade.")
+    st.write("Déjà présenté dans la partie 'Data Visualisation'. Nous n'observions pas de forte corrélations donc nous avons décidé de ne pas prendre de décision à ce stade.")
 
     st.write("### 2.B. Méthode SelectKbest")
     st.write("Nous avons appliqué une features selection avec un selectKbest qui se base sur une analyse univariée des features. Cette méthode est indépendante du modèle selectionné. Afin de faire plusieurs test, on se base sur une sélection de 10 seuils qui vont sélectionner un nombre de feature compris 10 et 100. Puis on lance un modèle avec chaque sélection de features afin de trouver le set de features qui parvient à obtenir la meilleure accuracy.")
