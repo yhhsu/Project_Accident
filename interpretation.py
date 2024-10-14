@@ -17,7 +17,7 @@ def app():
     # importances = model_lime.feature_importances_
     # indices = np.argsort(importances)[::-1]
     # ''', language='python')
-    st.image("img/feature_importance.png", caption="Features les plus importantes de notre modèle RF Optimisé", use_column_width=True)
+    # st.image("img/feature_importance.png", caption="Features les plus importantes de notre modèle RF Optimisé", use_column_width=True)
 
     # # Partie 2
     # st.write("## 2. Interprétation d'une prédiction")
