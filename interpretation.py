@@ -12,11 +12,11 @@ def app():
     st.write("Nous allons dans cette partie identifier les Features les plus importantes de notre modèle et ensuite interpréter une prédiction pour chaque classe prédite".)
     # Partie 1 
     st.write("## 1. Feature Importance")
-    st.code('''
-    # Code pour extraire les features les plus importantes de notre modèle:
-    importances = model_lime.feature_importances_
-    indices = np.argsort(importances)[::-1]
-    ''', language='python')
+    # st.code('''
+    # # Code pour extraire les features les plus importantes de notre modèle:
+    # importances = model_lime.feature_importances_
+    # indices = np.argsort(importances)[::-1]
+    # ''', language='python')
     st.image("img/feature_importance.png", caption="Features les plus importantes de notre modèle RF Optimisé", use_column_width=True)
 
     # Partie 2
