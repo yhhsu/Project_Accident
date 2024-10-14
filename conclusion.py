@@ -12,11 +12,11 @@ def app():
     st.write("### Bilan")
     st.markdown('''
     Niveau d'atteinte par rapport à nos objectifs de départ:
-    - **Nettoyage et préparation des données - Done**
-    - **Analyse exploratoire des données pour comprendre notre dataset et identifier des potentielles variables impactantes - Done**
-    - **Développement et optimisation de différents modèles de Machine Learning - Done**
-    - **Interprétation des prédictions notre modèle - Done**
-    ''')
+    - **Nettoyage et préparation des données - <span style="color:green">Done</span>**
+    - **Analyse exploratoire des données pour comprendre notre dataset et identifier des potentielles variables impactantes - <span style="color:green">Done</span>**
+    - **Développement et optimisation de différents modèles de Machine Learning - <span style="color:green">Done</span>**
+    - **Interprétation des prédictions de notre modèle - <span style="color:green">Done</span>**
+    ''', unsafe_allow_html=True)
     
     
     st.write("### Difficultés rencontrées lors du projet")
