@@ -24,6 +24,7 @@ def app():
 
     # Partie 2.A
     st.write("### 2.A. LIME")
+    st.write("La librairie LIME permet d'expliquer les prédictions d'un modèle en montrant quelles caractéristiques ont le plus influencé notre résultat")
 
     # Partie 2.B
     st.write("### 2.B. Interprétation prédiction de la classe Etat indemne")
