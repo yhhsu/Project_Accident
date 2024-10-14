@@ -20,7 +20,7 @@ df = pd.read_csv("data_preprocessed.csv")
 with st.sidebar:
   selected = option_menu(
     menu_title = "Table des Matières",
-    options = ["Vue d'Ensemble", "Jeu de Données", "Data Visualization", "Préparation des Données", "Modélisation", "Interprétation", "Conclusion"],
+    options = ["Vue d'Ensemble", "Jeu de Données", "Data Visualisation", "Préparation des Données", "Modélisation", "Interprétation", "Conclusion"],
     icons = ["house", "bricks", "bar-chart-fill", "gear", "hourglass-split", "sunrise", "journal-text"], ### https://icons.getbootstrap.com/ ###
     menu_icon = "cast",
     default_index = 0,
