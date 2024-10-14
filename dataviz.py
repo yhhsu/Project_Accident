@@ -85,3 +85,8 @@ def app():
     ''')
 
      # Chart 1
+    st.image("1.png", caption = "Evolution des accidents routiers en France")
+
+    st.write('''
+    Tout d’abord, Il est intéressant d’observer que le nombre d’accidents en France a drastiquement et continuellement baissé de 2005 à 2015 avant de connaître un léger rebond de 2015 à 2017. Ce qui laisse présager de meilleures précautions prises par les usagers de la route. 
+    ''')
