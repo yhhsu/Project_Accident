@@ -9,7 +9,7 @@ from streamlit_option_menu import option_menu
 df = pd.read_csv("data_preprocessed.csv")
 
 def app():
-    st.title("Data Visualization")
+    st.title("Data Visualisation")
     # Display the first 10 rows of the dataframe
     st.write("Displaying first 10 rows of the dataset:")
     st.dataframe(df.head(10))
