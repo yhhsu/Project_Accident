@@ -193,7 +193,7 @@ def app():
 
     st.write("Sur notre ensemble de test, nous terminons avec cette matrice de confusion reflétant notre Accuracy")
     
-    st.header("Matrices de Confusion de l'accuracy")
+    st.header("Matrices de Confusion reflétant notre Accuracy sur l'ensemble de Test")
     
     col1, col2 = st.columns(2)
     
