@@ -44,7 +44,7 @@ if selected == "Jeu de Données":
   jeu_donnee.app()
 
 ### Page 3 - Data Visualization ###
-if selected == "Data Visualization" : 
+if selected == "Data Visualisation" : 
   dataviz.app()
 
 ### Page 4 - Préparation des Données ###
